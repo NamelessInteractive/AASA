@@ -6,9 +6,10 @@
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <ProjectGuid>{1FE16570-5B78-4359-9B1C-3DE2207153B7}</ProjectGuid>
     <OutputType>Exe</OutputType>
+    <TargetProfile>netcore</TargetProfile>
     <RootNamespace>NamelessInteractive.AASA.JoyOfLiving.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>TestiOS</AssemblyName>
+    <AssemblyName>NamelessInteractiveAASAJoyOfLivingiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,11 +24,10 @@
     <PlatformTarget>
     </PlatformTarget>
     <MtouchDebug>true</MtouchDebug>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>Full</MtouchLink>
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>i386</MtouchArch>
-    <AssemblyName>TestiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,7 +42,6 @@
     <ConsolePause>false</ConsolePause>
     <Tailcalls>true</Tailcalls>
     <MtouchLink>None</MtouchLink>
-    <AssemblyName>TestiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,7 +62,6 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
-    <AssemblyName>NamelessInteractiveAASAJoyOfLivingiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,7 +76,6 @@
     <ConsolePause>false</ConsolePause>
     <Tailcalls>true</Tailcalls>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <AssemblyName>NamelessInteractiveAASAJoyOfLivingiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -95,7 +92,6 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
     <BuildIpa>true</BuildIpa>
-    <AssemblyName>NamelessInteractiveAASAJoyOfLivingiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -111,13 +107,11 @@
     </PlatformTarget>
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <AssemblyName>NamelessInteractiveAASAJoyOfLivingiOS</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="mscorlib" />
     <Reference Include="monotouch" />
     <Reference Include="Xamarin.Forms.Platform.iOS">
       <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Platform.iOS.dll</HintPath>
@@ -128,12 +122,11 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="FSharp.Core" />
     <Reference Include="System.Runtime">
-      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\Facades\System.Runtime.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\Facades\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.ObjectModel">
-      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\Facades\System.ObjectModel.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\Facades\System.ObjectModel.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -144,8 +137,8 @@
     <Compile Include="AppDelegate.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.5\Microsoft.FSharp.Targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" />
   <ItemGroup>
     <ProjectReference Include="..\NamelessInteractive.AASA.JoyOfLiving.Core\NamelessInteractive.AASA.JoyOfLiving.Core.fsproj">
       <Project>{B6E6E25B-A6FF-4A7C-97F1-F9A424CE41F9}</Project>

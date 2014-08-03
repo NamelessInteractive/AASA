@@ -1,13 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Android\MainActivity.fs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_15" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Android/NamelessInteractive.AASA.JoyOfLiving.Android.fsproj">
     <Files>
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.iOS\AppDelegate.fs" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\MainActivity.fs" Line="21" Column="21" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.iOS/AppDelegate.fs" Line="8" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/Entry.fs" Line="8" Column="16" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/Views.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebCore/Controllers.fs" Line="1" Column="1" />
+      <File FileName="../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="14" Column="54" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android/NamelessInteractive.AASA.JoyOfLiving.Android.fsproj" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/NamelessInteractive.AASA.JoyOfLiving.Core.fsproj" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>NamelessInteractive.AASA.JoyOfLiving.WebCore/NamelessInteractive.AASA.JoyOfLiving.WebCore.fsproj</String>
+    <String>NamelessInteractive.AASA.JoyOfLiving.WebHost/NamelessInteractive.AASA.JoyOfLiving.WebHost.csproj</String>
+  </DisabledProjects>
 </Properties>

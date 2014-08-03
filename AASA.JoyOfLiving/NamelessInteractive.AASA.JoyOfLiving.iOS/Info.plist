@@ -23,7 +23,7 @@
 	<key>MinimumOSVersion</key>
 	<string>7.1</string>
 	<key>CFBundleDisplayName</key>
-	<string>NamelessInteractive.AASA.JoyOfLiving.iOS</string>
+	<string>NamelessInteractiveAASAJoyOfLivingiOS</string>
 	<key>CFBundleIdentifier</key>
 	<string>NamelessInteractive.AASA.JoyOfLiving.iOS</string>
 	<key>CFBundleShortVersionString</key>
