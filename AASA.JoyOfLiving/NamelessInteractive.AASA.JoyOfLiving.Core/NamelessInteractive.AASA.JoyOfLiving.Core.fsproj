@@ -63,6 +63,9 @@
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
   <ItemGroup>
+    <Compile Include="Models.fs" />
+    <Compile Include="ViewModels.fs" />
+    <Compile Include="Views.fs" />
     <Compile Include="Entry.fs" />
     <Content Include="packages.config" />
   </ItemGroup>
