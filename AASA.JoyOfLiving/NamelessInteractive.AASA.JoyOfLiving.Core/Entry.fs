@@ -4,5 +4,5 @@ open Xamarin.Forms
 
 type App() =
     static member GetMainPage() =
-        let mainNav = NavigationPage(Views.LoginPage)
+        let mainNav = NavigationPage(Views.AttendeesListPage)
         mainNav

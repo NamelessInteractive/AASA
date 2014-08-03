@@ -35,6 +35,7 @@ namespace NamelessInteractive.AASA.JoyOfLiving.WindowsPhone
             // Language display initialization
             InitializeLanguage();
 
+            PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)
             {
