@@ -9,7 +9,7 @@ open Android.Runtime
 open Android.Views
 open Android.Widget
 
-[<Activity (Label = "Test", MainLauncher = true)>]
+[<Activity (Label = "AA - Jozi 2015", MainLauncher = true)>]
 type MainActivity () =
     inherit Xamarin.Forms.Platform.Android.AndroidActivity ()
     override this.OnCreate (bundle) =

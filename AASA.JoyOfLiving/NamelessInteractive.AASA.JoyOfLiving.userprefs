@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_15" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Android/NamelessInteractive.AASA.JoyOfLiving.Android.fsproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.x86_Nexus" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Core\Views.fs">
     <Files>
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.iOS/AppDelegate.fs" Line="8" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/Entry.fs" Line="8" Column="16" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/Views.fs" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebCore/Controllers.fs" Line="1" Column="1" />
-      <File FileName="../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="14" Column="54" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android/NamelessInteractive.AASA.JoyOfLiving.Android.fsproj" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/NamelessInteractive.AASA.JoyOfLiving.Core.fsproj" Line="14" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Entry.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Views.fs" Line="56" Column="56" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebCore\Controllers.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\Resources\Resource.designer.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\Resources\values\Strings.xml" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\MainActivity.fs" Line="9" Column="9" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\ViewModels.fs" Line="81" Column="81" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -19,4 +19,5 @@
     <String>NamelessInteractive.AASA.JoyOfLiving.WebCore/NamelessInteractive.AASA.JoyOfLiving.WebCore.fsproj</String>
     <String>NamelessInteractive.AASA.JoyOfLiving.WebHost/NamelessInteractive.AASA.JoyOfLiving.WebHost.csproj</String>
   </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.NamelessInteractive.AASA.JoyOfLiving.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" />
 </Properties>

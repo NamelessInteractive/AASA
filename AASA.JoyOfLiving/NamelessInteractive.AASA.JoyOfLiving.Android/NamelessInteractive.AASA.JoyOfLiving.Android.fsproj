@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <ProjectGuid>{4093F528-567F-48AA-BB19-8F59507AFE01}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Test.Android</RootNamespace>
+    <RootNamespace>NamelessInteractive.AASA.JoyOfLiving.Android</RootNamespace>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>

@@ -6,7 +6,7 @@ open System.Threading.Tasks
 let attendeesListViewModel = ViewModels.AttendeesListViewModel()
 
 let private CreateTestAttendees() =
-    let attendee = ViewModels.AttendeeViewModel()
+    let attendee = new ViewModels.AttendeeViewModel()
     attendee.FirstName <- "Bill"
     attendee.LastName <- "Wilson"
     attendee.EmailAddress <- "billw@aa.org"
@@ -14,6 +14,16 @@ let private CreateTestAttendees() =
     attendee.GroupName <- "New York"
     attendee.TelephoneNumber <- "555-555-5555"
     attendeesListViewModel.AttendeesList.Add(attendee)
+
+    let attendee1 = new ViewModels.AttendeeViewModel()
+    attendee1.FirstName <- "Lois"
+    attendee1.LastName <- "Wilson"
+    attendee1.EmailAddress <- "billw@aa.org"
+    attendee1.AttendeeType <- Models.AlAnon
+    attendee1.GroupName <- "Akron"
+    attendee1.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(attendee1)
+
 
 let private CreateLabelledEntry (labelText) =
     let label = Label(Text=labelText)
@@ -81,7 +91,7 @@ let LoginPage =
     ContentPage.Create ("Login", 5, loginStack)
 
 let AddAttendeePage =
-    let page = ContentPage.Create ("Add Attendee", 10)
+    let page = ContentPage.Create ("Add / Edit Attendee", 10)
     let addAttendeeScroll = ScrollView()
     let addAttendeeStack = StackLayout.CreatePadded(5)
     addAttendeeScroll.Content <- addAttendeeStack
@@ -120,25 +130,37 @@ let AddAttendeePage =
 
 
 let RegisterPage = 
-    
     let page = ContentPage.Create("Registration",10)
     let content = Label(Text="Payment Part Would Happen Here",VerticalOptions = LayoutOptions.CenterAndExpand, HorizontalOptions = LayoutOptions.CenterAndExpand)
     page.Content <- content
     page  
-    
+
 type AttendeeDT() = 
     inherit ViewCell()
     do 
-       let lbl = Label()          
-       lbl.SetBinding(Label.TextProperty, "FirstName")
-       base.View <- lbl
+        let stack = StackLayout(Orientation=StackOrientation.Horizontal)
+        let innerStack = StackLayout()
+        let name = Label()      
+        name.Font <- Font.SystemFontOfSize(NamedSize.Large)
+        let groupName = Label()
+        let attendeeType = Label()
+        let img = Image(WidthRequest=60.0, HeightRequest=60.0)
+        innerStack.Add(name)    
+        innerStack.Add(groupName)
+        stack.Add(img)
+        stack.Add(innerStack)
+        img.SetBinding(Image.SourceProperty,"ImageSource")
+        groupName.SetBinding(Label.TextProperty,"GroupName")
+        name.SetBinding(Label.TextProperty, "DisplayName")
+        base.View <- stack
 
 let AttendeesListPage = 
     CreateTestAttendees()
     let page = ContentPage.Create("Attendees List",10)
     page.BindingContext <- attendeesListViewModel
     let attendeesStack = StackLayout.CreatePadded(5)
-    let attendeesList = ListView(RowHeight=40)
+    let attendeesList = ListView()
+    attendeesList.RowHeight <- 60
     
     let addButton  = Button(Text="Add")
     let registerButton  = Button(Text="Register")
