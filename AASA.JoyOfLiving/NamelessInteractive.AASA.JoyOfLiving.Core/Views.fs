@@ -3,6 +3,18 @@
 open Xamarin.Forms
 open System.Threading.Tasks
 
+let attendeesListViewModel = ViewModels.AttendeesListViewModel()
+
+let private CreateTestAttendees() =
+    let attendee = ViewModels.AttendeeViewModel()
+    attendee.FirstName <- "Bill"
+    attendee.LastName <- "Wilson"
+    attendee.EmailAddress <- "billw@aa.org"
+    attendee.AttendeeType <- Models.AA
+    attendee.GroupName <- "New York"
+    attendee.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(attendee)
+
 let private CreateLabelledEntry (labelText) =
     let label = Label(Text=labelText)
     let entry = Entry(Placeholder=labelText)
@@ -115,9 +127,12 @@ let RegisterPage =
     page        
 
 let AttendeesListPage = 
+    CreateTestAttendees()
     let page = ContentPage.Create("Attendees List",10)
+    page.BindingContext <- attendeesListViewModel
     let attendeesStack = StackLayout.CreatePadded(5)
     let attendeesList = ListView()
+    attendeesList.SetBinding(ListView.ItemsSourceProperty, Binding("AttendeesList"))
     let addButton  = Button(Text="Add")
     let registerButton  = Button(Text="Register")
     let buttonStack = StackLayout.CreatePadded(5)
