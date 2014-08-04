@@ -124,15 +124,22 @@ let RegisterPage =
     let page = ContentPage.Create("Registration",10)
     let content = Label(Text="Payment Part Would Happen Here",VerticalOptions = LayoutOptions.CenterAndExpand, HorizontalOptions = LayoutOptions.CenterAndExpand)
     page.Content <- content
-    page        
+    page  
+    
+type AttendeeDT() = 
+    inherit ViewCell()
+    do 
+       let lbl = Label()          
+       lbl.SetBinding(Label.TextProperty, "FirstName")
+       base.View <- lbl
 
 let AttendeesListPage = 
     CreateTestAttendees()
     let page = ContentPage.Create("Attendees List",10)
     page.BindingContext <- attendeesListViewModel
     let attendeesStack = StackLayout.CreatePadded(5)
-    let attendeesList = ListView()
-    attendeesList.SetBinding(ListView.ItemsSourceProperty, Binding("AttendeesList"))
+    let attendeesList = ListView(RowHeight=40)
+    
     let addButton  = Button(Text="Add")
     let registerButton  = Button(Text="Register")
     let buttonStack = StackLayout.CreatePadded(5)
@@ -145,6 +152,8 @@ let AttendeesListPage =
     attendeesStack.Children.Add(attendeesList)
     attendeesStack.Children.Add(buttonStack)
     page.Content <- attendeesStack
+    attendeesList.ItemsSource <- attendeesListViewModel.AttendeesList
+    attendeesList.ItemTemplate <- DataTemplate(typeof<AttendeeDT>)
     page
 
    
