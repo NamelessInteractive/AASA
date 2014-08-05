@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.x86_Nexus" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Core\Views.fs">
     <Files>
       <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Entry.fs" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Views.fs" Line="56" Column="56" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Views.fs" Line="58" Column="27" />
       <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebCore\Controllers.fs" Line="1" Column="1" />
       <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\Resources\Resource.designer.fs" Line="1" Column="1" />
       <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\Resources\values\Strings.xml" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\MainActivity.fs" Line="9" Column="9" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\ViewModels.fs" Line="81" Column="81" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\MainActivity.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\ViewModels.fs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

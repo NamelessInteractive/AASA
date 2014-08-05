@@ -6,23 +6,50 @@ open System.Threading.Tasks
 let attendeesListViewModel = ViewModels.AttendeesListViewModel()
 
 let private CreateTestAttendees() =
-    let attendee = new ViewModels.AttendeeViewModel()
-    attendee.FirstName <- "Bill"
-    attendee.LastName <- "Wilson"
-    attendee.EmailAddress <- "billw@aa.org"
-    attendee.AttendeeType <- Models.AA
-    attendee.GroupName <- "New York"
-    attendee.TelephoneNumber <- "555-555-5555"
-    attendeesListViewModel.AttendeesList.Add(attendee)
+    let aa = new ViewModels.AttendeeViewModel()
+    aa.FirstName <- "Bill"
+    aa.LastName <- "Wilson"
+    aa.EmailAddress <- "billw@aa.org"
+    aa.AttendeeType <- Models.AA
+    aa.GroupName <- "New York"
+    aa.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(aa)
 
-    let attendee1 = new ViewModels.AttendeeViewModel()
-    attendee1.FirstName <- "Lois"
-    attendee1.LastName <- "Wilson"
-    attendee1.EmailAddress <- "billw@aa.org"
-    attendee1.AttendeeType <- Models.AlAnon
-    attendee1.GroupName <- "Akron"
-    attendee1.TelephoneNumber <- "555-555-5555"
-    attendeesListViewModel.AttendeesList.Add(attendee1)
+    let alanon = new ViewModels.AttendeeViewModel()
+    alanon.FirstName <- "Lois"
+    alanon.LastName <- "Wilson"
+    alanon.EmailAddress <- "billw@aa.org"
+    alanon.AttendeeType <- Models.AlAnon
+    alanon.GroupName <- "Akron"
+    alanon.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(alanon)
+
+    let alateen = new ViewModels.AttendeeViewModel()
+    alateen.FirstName <- "John"
+    alateen.LastName <- "Wilson"
+    alateen.EmailAddress <- "billw@aa.org"
+    alateen.AttendeeType <- Models.AlATeen
+    alateen.GroupName <- "Boston"
+    alateen.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(alateen)
+
+    let aaca = new ViewModels.AttendeeViewModel()
+    aaca.FirstName <- "Woodrow"
+    aaca.LastName <- "Wilson"
+    aaca.EmailAddress <- "billw@aa.org"
+    aaca.AttendeeType <- Models.AACA
+    aaca.GroupName <- "Boston"
+    aaca.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(aaca)
+
+    let visitor = new ViewModels.AttendeeViewModel()
+    visitor.FirstName <- "Sandy"
+    visitor.LastName <- "Wilson"
+    visitor.EmailAddress <- "billw@aa.org"
+    visitor.AttendeeType <- Models.Visitor
+    visitor.GroupName <- "Boston"
+    visitor.TelephoneNumber <- "555-555-5555"
+    attendeesListViewModel.AttendeesList.Add(visitor)
 
 
 let private CreateLabelledEntry (labelText) =

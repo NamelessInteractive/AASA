@@ -35,10 +35,10 @@ type AttendeeViewModel() =
 //        |> Seq.iter (fun res -> System.Diagnostics.Debug.WriteLine("found resource: " + res))
         match attendeeType with
         | Models.AA -> Xamarin.Forms.ImageSource.FromResource "AA.png"
-        | Models.AACA -> Xamarin.Forms.ImageSource.FromResource "AlAnon.png"
+        | Models.AACA -> Xamarin.Forms.ImageSource.FromResource "AACA.png"
         | Models.AlAnon -> Xamarin.Forms.ImageSource.FromResource "AlAnon.png"
         | Models.AlATeen -> Xamarin.Forms.ImageSource.FromResource "AlATeen.png"
-        | Models.Visitor -> Xamarin.Forms.ImageSource.FromResource "AlATeen.png"
+        | Models.Visitor -> Xamarin.Forms.ImageSource.FromResource "Visitor.png"
     let mutable m_FirstName = EmptyString
     let mutable m_LastName = EmptyString
     let mutable m_GroupName = EmptyString
