@@ -8,45 +8,6 @@
 <member name="">
 
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Microsoft.BuildSettings.BuildDetails">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Microsoft.BuildSettings.Version">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
 <member name="P:Microsoft.FSharp.Collections.FSharpList`1.Tail">
  <summary>Gets the tail of the list, which is a list containing all the elements of the list, excluding the first element </summary>
 </member>
@@ -306,41 +267,6 @@
 
  <param name="action">A function to apply to each element of the array.</param>
  <param name="array">The input array.</param>
-</member>
-<member name="M:Microsoft.FSharp.Collections.Array2DModule.ZeroCreateBased``1(System.Int32,System.Int32,System.Int32,System.Int32)">
- <summary>Creates a based array where the entries are initially Unchecked.defaultof&lt;'T&gt;.</summary>
-
- <param name="base1">The base for the first dimension of the array.</param>
- <param name="base2">The base for the second dimension of the array.</param>
- <param name="length1">The length of the first dimension of the array.</param>
- <param name="length2">The length of the second dimension of the array.</param>
-
- <returns>The created array.</returns>
- <exception cref="System.ArgumentException">Thrown when base1, base2, length1, or length2 is negative.</exception>
-</member>
-<member name="M:Microsoft.FSharp.Collections.Array2DModule.CreateBased``1(System.Int32,System.Int32,System.Int32,System.Int32,``0)">
- <summary>Creates a based array whose elements are all initially the given value.</summary>
-
- <param name="base1">The base for the first dimension of the array.</param>
- <param name="base2">The base for the second dimension of the array.</param>
- <param name="length1">The length of the first dimension of the array.</param>
- <param name="length2">The length of the second dimension of the array.</param>
- <param name="initial">The value to populate the new array.</param>
-
- <returns>The created array.</returns>
- <exception cref="System.ArgumentException">Thrown when base1, base2, length1, or length2 is negative.</exception>
-</member>
-<member name="M:Microsoft.FSharp.Collections.Array2DModule.InitializeBased``1(System.Int32,System.Int32,System.Int32,System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Int32,``0}})">
- <summary>Creates a based array given the dimensions and a generator function to compute the elements.</summary>
-
- <param name="base1">The base for the first dimension of the array.</param>
- <param name="base2">The base for the second dimension of the array.</param>
- <param name="length1">The length of the first dimension of the array.</param>
- <param name="length2">The length of the second dimension of the array.</param>
- <param name="initializer">A function to produce elements of the array given the two indices.</param>
-
- <returns>The created array.</returns>
- <exception cref="System.ArgumentException">Thrown when base1, base2, length1, or length2 is negative.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Collections.Array2DModule.ZeroCreate``1(System.Int32,System.Int32)">
  <summary>Creates an array where the entries are initially Unchecked.defaultof&lt;'T&gt;.</summary>
@@ -4544,7 +4470,7 @@
  <summary>Indicates that, when a custom operator is used in a computation expression,
  a parameter is automatically parameterized by the variable space of the computation expression</summary>
 </member>
-<member name="P:Microsoft.FSharp.Core.FSharpRef`1.contents">
+<member name="F:Microsoft.FSharp.Core.Microsoft.FSharp.Core.FSharpRef`1.contents">
 <summary>
  The current value of the reference cell
 </summary>
@@ -4941,6 +4867,39 @@
 <member name="T:Microsoft.FSharp.Core.CompilerServices.GeneratedSequenceBase`1">
  <summary>The F# compiler emits implementations of this type for compiled sequence expressions.</summary>
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="P:Microsoft.FSharp.Core.CompilerServices.IProvidedNamespace.NamespaceName">
 <summary>
  Namespace name the provider injects types into.
@@ -4990,9 +4949,19 @@
  <param name="typeWithoutArguments">A type returned by GetTypes or ResolveTypeName</param>
  <returns></returns>
 </member>
+<member name="M:Microsoft.FSharp.Core.CompilerServices.ITypeProvider.GetParameterCustomAttributesData(System.Reflection.ParameterInfo)">
+ <summary>
+ Get the custom attribute data for a provided parameter.
+ </summary>
+</member>
 <member name="M:Microsoft.FSharp.Core.CompilerServices.ITypeProvider.GetNamespaces">
  <summary>
  Namespace name the this TypeProvider injects types into.
+ </summary>
+</member>
+<member name="M:Microsoft.FSharp.Core.CompilerServices.ITypeProvider.GetMemberCustomAttributesData(System.Reflection.MemberInfo)">
+ <summary>
+ Get the custom attribute data for a provided member or type.
  </summary>
 </member>
 <member name="M:Microsoft.FSharp.Core.CompilerServices.ITypeProvider.GetInvokerExpression(System.Reflection.MethodBase,Microsoft.FSharp.Quotations.FSharpExpr[])">
@@ -5326,6 +5295,12 @@
  <returns>The formatted result.</returns>
 </member>
 <member name="T:Microsoft.FSharp.Core.ExtraTopLevelOperators">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Microsoft.FSharp.Core.ICloneableExtensions">
 
 </member>
 <member name="M:Microsoft.FSharp.Core.LanguagePrimitives.DivideByInt``1(``0,System.Int32)">
@@ -5946,11 +5921,6 @@
  <param name="x">The input base.</param>
  <param name="y">The input exponent.</param>
  <returns>The base raised to the exponent.</returns>
-</member>
-<member name="M:Microsoft.FSharp.Core.Operators.Truncate``1(``0)">
- <summary>Overloaded truncate operator.</summary>
- <param name="value">The input value.</param>
- <returns>The truncated value.</returns>
 </member>
 <member name="M:Microsoft.FSharp.Core.Operators.Tanh``1(``0)">
  <summary>Hyperbolic tangent of the given number</summary>
@@ -7036,27 +7006,6 @@
 <member name="T:Microsoft.FSharp.Core.OptionModule">
  <summary>Basic operations on options.</summary>
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Microsoft.FSharp.Core.PrimReflectionAdapters">
-
-</member>
 <member name="T:Microsoft.FSharp.Core.PrintfModule.TextWriterFormat`1">
  <summary>Represents a statically-analyzed format associated with writing to a <c>System.IO.TextWriter</c>. The type parameter indicates the
  arguments and return type of the format operation.</summary>
@@ -7224,174 +7173,6 @@
               sign for negatives)
  </c>
  The printf '#' flag is invalid and a compile-time error will be reported if it is used.</remarks>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:Microsoft.FSharp.Core.ReflectionAdapters">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="">
 
@@ -7847,25 +7628,28 @@
  <summary>Returns the length of the string.</summary>
  <param name="str">The input string.</param>
  <returns>The number of characters in the string.</returns>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.Replicate(System.Int32,System.String)">
  <summary>Returns a string by concatenating <c>count</c> instances of <c>str</c>.</summary>
  <param name="count">The number of copies of the input string will be copied.</param>
  <param name="str">The input string.</param>
  <returns>The concatenated string.</returns>
- <exception cref="System.ArgumentException">Thrown when <c>count</c> is negative.</exception>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.Exists(Microsoft.FSharp.Core.FSharpFunc{System.Char,System.Boolean},System.String)">
  <summary>Tests if any character of the string satisfies the given predicate.</summary>
  <param name="predicate">The function to test each character of the string.</param>
  <param name="str">The input string.</param>
  <returns>True if any character returns true for the predicate and false otherwise.</returns>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.ForAll(Microsoft.FSharp.Core.FSharpFunc{System.Char,System.Boolean},System.String)">
  <summary>Tests if all characters in the string satisfy the given predicate.</summary>
  <param name="predicate">The function to test each character of the string.</param>
  <param name="str">The input string.</param>
  <returns>True if all characters return true for the predicate and false otherwise.</returns>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.Initialize(System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Int32,System.String})">
  <summary>Builds a new string whose characters are the results of applying the function <c>mapping</c>
@@ -7884,6 +7668,7 @@
  <param name="mapping">The function to produce a string from each character of the input string.</param>
  <param name="str">The input string.</param>
  <returns>The concatenated string.</returns>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.MapIndexed(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Char,System.Char}},System.String)">
  <summary>Builds a new string whose characters are the results of applying the function <c>mapping</c>
@@ -7891,6 +7676,7 @@
  <param name="mapping">The function to apply to each character and index of the string.</param>
  <param name="str">The input string.</param>
  <returns>The resulting string.</returns>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.Map(Microsoft.FSharp.Core.FSharpFunc{System.Char,System.Char},System.String)">
  <summary>Builds a new string whose characters are the results of applying the function <c>mapping</c>
@@ -7898,17 +7684,20 @@
  <param name="mapping">The function to apply to the characters of the string.</param>
  <param name="str">The input string.</param>
  <returns>The resulting string.</returns>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.IterateIndexed(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Core.FSharpFunc{System.Char,Microsoft.FSharp.Core.Unit}},System.String)">
  <summary>Applies the function <c>action</c> to the index of each character in the string and the
  character itself.</summary>
  <param name="action">The function to apply to each character and index of the string.</param>
  <param name="str">The input string.</param>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.Iterate(Microsoft.FSharp.Core.FSharpFunc{System.Char,Microsoft.FSharp.Core.Unit},System.String)">
  <summary>Applies the function <c>action</c> to each character in the string.</summary>
  <param name="action">The function to be applied to each character of the string.</param>
  <param name="str">The input string.</param>
+ <exception cref="System.ArgumentNullException">Thrown when the input string is null.</exception>
 </member>
 <member name="M:Microsoft.FSharp.Core.StringModule.Concat(System.String,System.Collections.Generic.IEnumerable{System.String})">
  <summary>Returns a new string made by concatenating the given strings
@@ -7918,7 +7707,7 @@
  <param name="strings">The sequence of strings to be concatenated.</param>
  <returns>A new string consisting of the concatenated strings separated by
  the separation string.</returns>
- <exception cref="System.ArgumentNullException">Thrown when <c>strings</c> is null.</exception>
+ <exception cref="System.ArgumentNullException">Thrown when strings is null.</exception>
 </member>
 <member name="T:Microsoft.FSharp.Core.StringModule">
  <summary>Functional programming operators for string processing.  Further string operations
@@ -10110,9 +9899,21 @@
  <param name="range">The output type of the function.</param>
  <returns>The function type with the given domain and range.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpType.IsUnion(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Returns true if the <c>typ</c> is a representation of an F# union type or the runtime type of a value of that type</summary>
+ <param name="typ">The type to check.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>True if the type check succeeds.</returns>
+</member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpType.IsTuple(System.Type)">
  <summary>Return true if the <c>typ</c> is a representation of an F# tuple type </summary>
  <param name="typ">The type to check.</param>
+ <returns>True if the type check succeeds.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpType.IsRecord(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Return true if the <c>typ</c> is a representation of an F# record type </summary>
+ <param name="typ">The type to check.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
  <returns>True if the type check succeeds.</returns>
 </member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpType.IsModule(System.Type)">
@@ -10125,18 +9926,87 @@
  <param name="typ">The type to check.</param>
  <returns>True if the type check succeeds.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpType.IsExceptionRepresentation(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Returns true if the <c>typ</c> is a representation of an F# exception declaration</summary>
+ <param name="exceptionType">The type to check.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>True if the type check is an F# exception.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpType.GetUnionCases(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Gets the cases of a union type.</summary>
+
+ <remarks>Assumes the given type is a union type. If not, ArgumentException is raised during pre-computation.</remarks>
+ <param name="unionType">The input union type.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not a union type.</exception>
+ <returns>An array of descriptions of the cases of the given union type.</returns>
+</member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpType.GetTupleElements(System.Type)">
  <summary>Gets the tuple elements from the representation of an F# tuple type.</summary>
  <param name="tupleType">The input tuple type.</param>
  <returns>An array of the types contained in the given tuple type.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpType.GetRecordFields(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Reads all the fields from a record value, in declaration order</summary>
+
+ <remarks>Assumes the given input is a record value. If not, ArgumentException is raised.</remarks>
+ <param name="recordType">The input record type.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>An array of descriptions of the properties of the record type.</returns>
 </member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpType.GetFunctionElements(System.Type)">
  <summary>Gets the domain and range types from an F# function type  or from the runtime type of a closure implementing an F# type</summary>
  <param name="functionType">The input function type.</param>
  <returns>A tuple of the domain and range types of the input function.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpType.GetExceptionFields(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Reads all the fields from an F# exception declaration, in declaration order</summary>
+
+ <remarks>Assumes <c>exceptionType</c> is an exception representation type. If not, ArgumentException is raised.</remarks>
+ <param name="exceptionType">The exception type to read.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <exception cref="System.ArgumentException">Thrown if the given type is not an exception.</exception>
+ <returns>An array containing the PropertyInfo of each field in the exception.</returns>
+</member>
 <member name="T:Microsoft.FSharp.Reflection.FSharpType">
  <summary>Contains operations associated with constructing and analyzing F# types such as records, unions and tuples</summary>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionTagReader(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Assumes the given type is a union type. 
+ If not, ArgumentException is raised during pre-computation.</summary>
+
+ <remarks>Using the computed function is more efficient than calling GetUnionCase
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.</remarks>
+ <param name="unionType">The type of union to optimize reading.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>An optimized function to read the tags of the given union type.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionTagMemberInfo(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Precompute a property or static method for reading an integer representing the case tag of a union type.</summary>
+ <param name="unionType">The type of union to read.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>The description of the union case reader.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionReader(Microsoft.FSharp.Reflection.UnionCaseInfo,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Precomputes a function for reading all the fields for a particular discriminator case of a union type</summary>
+
+ <remarks>Using the computed function will typically be faster than executing a corresponding call to GetFields</remarks>
+ <param name="unionCase">The description of the union case to read.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>A function to for reading the fields of the given union case.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionConstructorInfo(Microsoft.FSharp.Reflection.UnionCaseInfo,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>A method that constructs objects of the given case</summary>
+ <param name="unionCase">The description of the union case.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>The description of the constructor of the given union case.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeUnionConstructor(Microsoft.FSharp.Reflection.UnionCaseInfo,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Precomputes a function for constructing a discriminated union value for a particular union case. </summary>
+ <param name="unionCase">The description of the union case.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>A function for constructing values of the given union case.</returns>
 </member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeTupleReader(System.Type)">
  <summary>Precomputes a function for reading the values of a particular tuple type</summary>
@@ -10176,6 +10046,22 @@
  <exception cref="System.ArgumentException">Thrown when the given type is not a tuple type.</exception>
  <returns>A function to read a particular tuple type.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordReader(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Precompute a function for reading all the fields from a record. The fields are returned in the
+ same order as the fields reported by a call to Microsoft.FSharp.Reflection.Type.GetInfo for
+ this type.</summary>
+
+ <remarks>Assumes the given type is a RecordType. 
+ If not, ArgumentException is raised during pre-computation.
+
+ Using the computed function will typically be faster than executing a corresponding call to Value.GetInfo
+ because the path executed by the computed function is optimized given the knowledge that it will be
+ used to read values of the given type.</remarks>
+ <param name="recordType">The type of record to read.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not a record type.</exception>
+ <returns>An optimized reader for the given record type.</returns>
+</member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordFieldReader(System.Reflection.PropertyInfo)">
  <summary>Precompute a function for reading a particular field from a record.
  Assumes the given type is a RecordType with a field of the given name. 
@@ -10188,6 +10074,29 @@
  <exception cref="System.ArgumentException">Thrown when the input type is not a record type.</exception>
  <returns>A function to read the specified field from the record.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordConstructorInfo(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Get a ConstructorInfo for a record type</summary>
+ <param name="recordType">The record type.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>A ConstructorInfo for the given record type.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.PreComputeRecordConstructor(System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Precompute a function for constructing a record value. </summary>
+
+ <remarks>Assumes the given type is a RecordType.
+ If not, ArgumentException is raised during pre-computation.</remarks>
+ <param name="recordType">The type of record to construct.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not a record type.</exception>
+ <returns>A function to construct records of the given type.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.MakeUnion(Microsoft.FSharp.Reflection.UnionCaseInfo,System.Object[],Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Create a union case value.</summary>
+ <param name="unionCase">The description of the union case to create.</param>
+ <param name="args">The array of arguments to construct the given case.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <returns>The constructed union case.</returns>
+</member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpValue.MakeTuple(System.Object[],System.Type)">
  <summary>Creates an instance of a tuple type</summary>
 
@@ -10197,11 +10106,35 @@
  <exception cref="System.ArgumentException">Thrown if no elements are given.</exception>
  <returns>An instance of the tuple type with the given elements.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.MakeRecord(System.Type,System.Object[],Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Creates an instance of a record type.</summary>
+
+ <remarks>Assumes the given input is a record type.</remarks>
+ <param name="recordType">The type of record to make.</param>
+ <param name="values">The array of values to initialize the record.</param>
+ <param name="bindingFlags">Optional binding flags for the record.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not a record type.</exception>
+ <returns>The created record.</returns>
+</member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpValue.MakeFunction(System.Type,Microsoft.FSharp.Core.FSharpFunc{System.Object,System.Object})">
  <summary>Builds a typed function from object from a dynamic function implementation</summary>
  <param name="functionType">The function type of the implementation.</param>
  <param name="implementation">The untyped lambda of the function implementation.</param>
  <returns>A typed function from the given dynamic implementation.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.GetUnionFields(System.Object,System.Type,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Identify the union case and its fields for an object</summary>
+
+ <remarks>Assumes the given input is a union case value. If not, ArgumentException is raised.
+
+ If the type is not given, then the runtime type of the input object is used to identify the
+ relevant union type. The type should always be given if the input object may be null. For example, 
+ option values may be represented using the 'null'.</remarks>
+ <param name="value">The input union case.</param>
+ <param name="unionType">The union type containing the value.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not a union case value.</exception>
+ <returns>The description of the union case and its fields.</returns>
 </member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpValue.GetTupleFields(System.Object)">
  <summary>Reads all fields from a tuple.</summary>
@@ -10219,6 +10152,15 @@
  <param name="index">The index of the field to read.</param>
  <returns>The value of the field.</returns>
 </member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.GetRecordFields(System.Object,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Reads all the fields from a record value.</summary>
+
+ <remarks>Assumes the given input is a record value. If not, ArgumentException is raised.</remarks>
+ <param name="record">The record object.</param>
+ <param name="bindingFlags">Optional binding flags for the record.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not a record type.</exception>
+ <returns>The array of fields from the record.</returns>
+</member>
 <member name="M:Microsoft.FSharp.Reflection.FSharpValue.GetRecordField(System.Object,System.Reflection.PropertyInfo)">
  <summary>Reads a field from a record value.</summary>
 
@@ -10227,6 +10169,15 @@
  <param name="info">The PropertyInfo describing the field to read.</param>
  <exception cref="System.ArgumentException">Thrown when the input type is not a record type.</exception>
  <returns>The field from the record.</returns>
+</member>
+<member name="M:Microsoft.FSharp.Reflection.FSharpValue.GetExceptionFields(System.Object,Microsoft.FSharp.Core.FSharpOption{System.Reflection.BindingFlags})">
+ <summary>Reads all the fields from a value built using an instance of an F# exception declaration</summary>
+
+ <remarks>Assumes the given input is an F# exception value. If not, ArgumentException is raised.</remarks>
+ <param name="exn">The exception instance.</param>
+ <param name="bindingFlags">Optional binding flags.</param>
+ <exception cref="System.ArgumentException">Thrown when the input type is not an F# exception.</exception>
+ <returns>The fields from the given exception.</returns>
 </member>
 <member name="T:Microsoft.FSharp.Reflection.FSharpValue">
  <summary>Contains operations associated with constructing and analyzing values associated with F# types
@@ -10683,6 +10634,28 @@
  If a joint is broken the RHS layout occurs on the next line with optional indentation.
  A layout can be squashed to for given width which forces breaks as required.
 </summary>
+</member>
+<member name="M:System.IObservable`1.Subscribe(System.IObserver{`0})">
+ <summary>Subscribe an observer to the source of results</summary>
+ <param name="observer">The observer to be added to those that are notified.</param>
+ <returns>An IDisposable to allow for unsubscription.</returns>
+</member>
+<member name="T:System.IObservable`1">
+ <summary>A source of observable results</summary>
+</member>
+<member name="M:System.IObserver`1.OnNext(`0)">
+ <summary>Notify an observer of a new result</summary>
+ <param name="value">The value to notify observers.</param>
+</member>
+<member name="M:System.IObserver`1.OnError(System.Exception)">
+ <summary>Notify an observer of an error </summary>
+ <param name="error">The exception to notify observers.</param>
+</member>
+<member name="M:System.IObserver`1.OnCompleted">
+ <summary>Notify an observer that no more results will be produced.</summary>
+</member>
+<member name="T:System.IObserver`1">
+ <summary>A client that may be subscribed to observe the results from an IObservable.</summary>
 </member>
 <member name="M:System.Numerics.BigInteger.op_UnaryPlus(System.Numerics.BigInteger)">
 <summary>

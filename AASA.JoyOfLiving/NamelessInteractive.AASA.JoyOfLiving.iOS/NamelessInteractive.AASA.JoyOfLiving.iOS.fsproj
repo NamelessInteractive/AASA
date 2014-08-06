@@ -6,7 +6,6 @@
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <ProjectGuid>{1FE16570-5B78-4359-9B1C-3DE2207153B7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetProfile>netcore</TargetProfile>
     <RootNamespace>NamelessInteractive.AASA.JoyOfLiving.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>NamelessInteractiveAASAJoyOfLivingiOS</AssemblyName>
@@ -24,7 +23,7 @@
     <PlatformTarget>
     </PlatformTarget>
     <MtouchDebug>true</MtouchDebug>
-    <MtouchLink>Full</MtouchLink>
+    <MtouchLink>None</MtouchLink>
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>i386</MtouchArch>
@@ -62,6 +61,7 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
+    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -111,7 +111,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="Xamarin.Forms.Platform.iOS">
       <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Platform.iOS.dll</HintPath>
@@ -127,6 +126,10 @@
     </Reference>
     <Reference Include="System.ObjectModel">
       <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\lib\mono\4.5\Facades\System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="FSharp.Core">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\3.6.0\lib\mono\4.5\FSharp.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
