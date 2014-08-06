@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AVD_for_Nexus_5_by_Google" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Android/NamelessInteractive.AASA.JoyOfLiving.Android.fsproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Android\NamelessInteractive.AASA.JoyOfLiving.Android.fsproj">
     <Files>
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android/NamelessInteractive.AASA.JoyOfLiving.Android.fsproj" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core/NamelessInteractive.AASA.JoyOfLiving.Core.fsproj" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Android\NamelessInteractive.AASA.JoyOfLiving.Android.fsproj" Line="12" Column="34" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\NamelessInteractive.AASA.JoyOfLiving.Core.fsproj" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
