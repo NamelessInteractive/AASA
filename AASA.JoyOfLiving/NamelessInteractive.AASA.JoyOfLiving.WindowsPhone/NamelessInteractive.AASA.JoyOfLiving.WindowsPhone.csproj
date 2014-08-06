@@ -155,6 +155,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AA.png" />
+    <Content Include="AALrg.png" />
+    <Content Include="AAMed.png" />
+    <Content Include="AASml.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
