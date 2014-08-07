@@ -29,10 +29,6 @@ open System.Reflection;
 type AttendeeViewModel() =
     inherit ViewModelBase()
     let getResourceNameAttendeeType attendeeType = 
-//        let atype = typeof<Models.AttendeeType>
-//        let assembly = atype.GetTypeInfo().Assembly;
-//        assembly.GetManifestResourceNames()
-//        |> Seq.iter (fun res -> System.Diagnostics.Debug.WriteLine("found resource: " + res))
         match attendeeType with
         | Models.AA -> Xamarin.Forms.ImageSource.FromResource "AA.png"
         | Models.AACA -> Xamarin.Forms.ImageSource.FromResource "AACA.png"
@@ -45,7 +41,9 @@ type AttendeeViewModel() =
     let mutable m_EmailAddress = EmptyString
     let mutable m_TelephoneNumber = EmptyString
     let mutable m_AttendeeType = Models.AA
-    let mutable m_FirstRun = true
+    let mutable m_IsNew = true
+    let mutable m_IsPaid = false
+    let mutable m_IncludeShares = false
     member this.FirstName
         with get() = m_FirstName
         and  set value =
@@ -84,6 +82,21 @@ type AttendeeViewModel() =
     member this.ImageSource 
         with get() = 
             getResourceNameAttendeeType m_AttendeeType
+    member this.IsNew 
+        with get() = m_IsNew
+        and  set value =
+                m_IsNew <- value
+                base.OnChanged(null)
+    member this.IsPaid
+        with get() = m_IsPaid
+        and  set value =
+                m_IsPaid <- value
+                base.OnChanged(null)
+    member this.IncludeShares
+        with get() = m_IncludeShares
+        and  set value =
+                m_IncludeShares <- value
+                base.OnChanged(null)
 
 type AttendeesListViewModel() =
     inherit ViewModelBase()

@@ -11,6 +11,18 @@ module internal Constants =
     let AACAString = "AACA"
     [<Literal>]
     let VisitorString = "Visitor"
+    [<Literal>]
+    let XSmallString = "E"
+    [<Literal>]
+    let SmallString = "S"
+    [<Literal>]
+    let MediumString = "M"
+    [<Literal>]
+    let LargeString = "L"
+    [<Literal>]
+    let XLargeString = "XL"
+    [<Literal>]
+    let XXLargeString = "XXL"
 
 type AttendeeType = 
     | AA
@@ -18,6 +30,14 @@ type AttendeeType =
     | AACA
     | AlATeen
     | Visitor
+
+type ShirtSize =
+    | ShirtSizeXS 
+    | ShirtSizeS
+    | ShirtSizeM
+    | ShirtSizeL
+    | ShirtSizeXL
+    | ShirtSizeXXL
 
 [<AutoOpen>]
 module internal Patterns = 

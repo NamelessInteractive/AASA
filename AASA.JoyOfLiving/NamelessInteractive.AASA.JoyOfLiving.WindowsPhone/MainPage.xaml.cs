@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using NamelessInteractive.AASA.JoyOfLiving.WindowsPhone.Resources;
 using Xamarin.Forms;
+using NamelessInteractive.AASA.JoyOfLiving.Core;
 
 namespace NamelessInteractive.AASA.JoyOfLiving.WindowsPhone
 {
