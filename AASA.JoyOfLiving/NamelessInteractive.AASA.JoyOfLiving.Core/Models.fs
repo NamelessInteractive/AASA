@@ -1,6 +1,10 @@
 ﻿module NamelessInteractive.AASA.JoyOfLiving.Core.Models
 
-module internal Constants =
+
+
+let EmptyString = System.String.Empty
+
+module Constants =
     [<Literal>]
     let AAString = "AA"
     [<Literal>]
@@ -80,3 +84,43 @@ module Utilities =
         | AlATeenText -> AlATeen
         | VisitorText -> Visitor
         | _ -> failwith "Unknown attendee type string"
+
+type Attendee = 
+    {
+        mutable FirstName : string
+        mutable LastName : string
+        mutable GroupName: string
+        mutable EmailAddress: string
+        mutable TelephoneNumber: string
+        mutable AttendeeType: AttendeeType
+        mutable IsPaid: bool
+        mutable IncludeShares: bool
+        mutable TShirtSize: ShirtSize
+    }
+    with 
+        static member Create() = 
+            { 
+                FirstName = EmptyString
+                LastName = EmptyString
+                GroupName = EmptyString
+                EmailAddress = EmptyString
+                TelephoneNumber = EmptyString
+                AttendeeType = AA
+                IsPaid = false
+                IncludeShares = true
+                TShirtSize = ShirtSizeM
+            }
+
+let GenerateHash (value: string) =
+    let buffer = Array.zeroCreate(10)
+    System.Random().NextBytes(buffer)
+    let salt = System.Text.UTF8Encoding.UTF8.GetString(buffer,0,buffer.Length)
+    let saltLen = salt.Length.ToString()
+    saltLen + ":" + salt + NamelessInteractive.Shared.Security.SHA512().ComputeString(value).ToString()
+
+
+let CompareHash (value: string, actual: string) =
+    let saltLen = int (actual.Substring(0, actual.IndexOf(":")))
+    let actualUnsalted = actual.Substring(saltLen.ToString().Length + 1 + saltLen)
+    let res = NamelessInteractive.Shared.Security.SHA512().ComputeString(value).ToString()
+    res = actualUnsalted

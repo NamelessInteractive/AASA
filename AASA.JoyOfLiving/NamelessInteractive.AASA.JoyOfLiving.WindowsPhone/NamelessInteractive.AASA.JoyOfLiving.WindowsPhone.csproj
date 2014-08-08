@@ -220,6 +220,10 @@
       <Project>{b6e6e25b-a6ff-4a7c-97f1-f9a424ce41f9}</Project>
       <Name>NamelessInteractive.AASA.JoyOfLiving.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NamelessInteractive.AASA.JoyOfLiving.Views\NamelessInteractive.AASA.JoyOfLiving.Views.fsproj">
+      <Project>{b35206cd-1a7f-4b2a-8578-83e2724b374f}</Project>
+      <Name>NamelessInteractive.AASA.JoyOfLiving.Views</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

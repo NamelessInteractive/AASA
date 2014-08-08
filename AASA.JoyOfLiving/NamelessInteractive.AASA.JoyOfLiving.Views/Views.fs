@@ -1,8 +1,11 @@
-﻿module NamelessInteractive.AASA.JoyOfLiving.Core.Views
+﻿module NamelessInteractive.AASA.JoyOfLiving.Views.Views
 
 open Xamarin.Forms
 open System.Threading.Tasks
 open System
+open NamelessInteractive.Shared
+open NamelessInteractive.Shared.Controls
+open NamelessInteractive.AASA.JoyOfLiving.Core
 
 let attendeesListViewModel = ViewModels.AttendeesListViewModel()
 
@@ -53,93 +56,34 @@ let private CreateTestAttendees() =
     visitor.TelephoneNumber <- "555-555-5555"
     attendeesListViewModel.AttendeesList.Add(visitor)
 
-
-let private CreateLabelledEntry (labelText) =
-    let label = Label(Text=labelText)
-    let entry = Entry(Placeholder=labelText)
-    label,entry
-
-let private CreateLabelledSwitch (labelText) =
-    let stack = StackLayout(Orientation=StackOrientation.Horizontal)
-    let label = Label(Text=labelText)
-    label.VerticalOptions <- LayoutOptions.CenterAndExpand
-    let entry = Switch()
-    stack.Children.Add(label)
-    stack.Children.Add(entry)
-    stack, label, entry
-
-let private WithBoolBinding (bindingPath: string) (stack,label,entry: Switch) =
-    entry.SetBinding(Switch.IsToggledProperty, bindingPath)
-    stack,label,entry
-
-let private CreateLabelledLabel (labelText) (labelValue) =
-    let label1 = Label(Text=labelText)
-    label1.Font <- Font.SystemFontOfSize(NamedSize.Large)
-    let label2 = Label(Text=labelValue)
-    label1,label2
-
 let private CreateEmailEntry () =
     let email = CreateLabelledEntry("Email Address")
-    let entryPart = snd email
+    let entryPart = email.Children.[1] :?> Entry
     entryPart.Keyboard <- Keyboard.Email
     email
 
 let private CreateTelephoneEntry () =
     let phone = CreateLabelledEntry("Telephone Number")
-    let entryPart = snd phone
+    let entryPart = phone.Children.[1] :?> Entry
     entryPart.Keyboard <- Keyboard.Telephone
     phone
 
 let private CreatePasswordEntry() =
     let password = CreateLabelledEntry("Password")
-    let entryPart = snd password
+    let entryPart = password.Children.[1] :?> Entry
     entryPart.IsPassword <- true
     password
 
-let private CreateLabelledDropDown (labelText) (elements) =
-    let label = Label(Text=labelText)
-    let entry = Picker()
-    elements |> Seq.iter entry.Items.Add
-    label,entry
-
-let private WithTextBinding (bindingPath: string )(label,entry: Entry) =
-    entry.SetBinding(Entry.TextProperty, bindingPath)
-    label,entry
-
-let AddToStack (stack: StackLayout) (v1,v2) =
-    stack.Children.Add(v1)
-    stack.Children.Add(v2)
-
-type Xamarin.Forms.StackLayout with
-    static member Create() = StackLayout()
-    static member CreatePadded(padding) = StackLayout(Padding=Thickness(padding))
-    static member CreatePadded(padding: int) = StackLayout(Padding=Thickness(float padding))
-    static member CreatePaddedCentered(padding) = StackLayout(Padding=Thickness(padding),VerticalOptions = LayoutOptions.Center)
-    static member CreatePaddedCentered(padding: int) = StackLayout(Padding=Thickness(float padding),VerticalOptions = LayoutOptions.Center)
-    member this.Add(view:View) = this.Children.Add(view)
-
-type Xamarin.Forms.ContentPage with
-    static member Create() = ContentPage()
-    static member Create title = ContentPage(Title=title)
-    static member Create (title, padding) = ContentPage(Title=title, Padding=Thickness(padding))
-    static member Create (title,padding:int) = ContentPage(Title=title, Padding=Thickness(float padding))
-    static member Create (title,padding, content) = ContentPage(Title=title, Padding=Thickness(padding), Content=content)
-    static member Create (title, padding:int, content) = ContentPage(Title=title, Padding=Thickness(float padding), Content=content)
-
 let LoginPage =     
     let loginStack = StackLayout.CreatePaddedCentered(5)
-    let email = CreateEmailEntry()
-    loginStack.Children.Add(fst email)
-    loginStack.Children.Add(snd email)
-    let password = CreatePasswordEntry()
-    loginStack.Children.Add(fst password)
-    loginStack.Children.Add(snd password)
+    CreateEmailEntry() |> AndAddToStack loginStack
+    CreatePasswordEntry() |> AndAddToStack loginStack
     let buttonStack = StackLayout()
     buttonStack.Orientation <- StackOrientation.Horizontal
     buttonStack.HorizontalOptions <- LayoutOptions.Center
-    buttonStack.Children.Add(Button(Text="Login"))
-    buttonStack.Children.Add(Button(Text="Register"))
-    loginStack.Children.Add(buttonStack)
+    buttonStack.Add(Button(Text="Login"))
+    buttonStack.Add(Button(Text="Register"))
+    loginStack.Add(buttonStack)
     ContentPage.Create ("Login", 5, loginStack)
 
 let thrd (_,_,x) = x
@@ -170,15 +114,13 @@ let AddAttendeePage(attendee: ViewModels.AttendeeViewModel option) =
                             "Pied Piper"
                             "Fellowship of the Spirit"
                         ]
-    CreateLabelledDropDown ("Attendee Type") attendeeTypes |> AddToStack addAttendeeStack
-    CreateLabelledEntry("First Name") |> WithTextBinding "FirstName" |> AddToStack addAttendeeStack
-    CreateLabelledEntry("Last Name") |> WithTextBinding "LastName" |> AddToStack addAttendeeStack
-    CreateLabelledDropDown("Group Name") tmpGroupNames |> AddToStack addAttendeeStack
-    CreateEmailEntry() |> WithTextBinding "EmailAddress" |> AddToStack addAttendeeStack
-    CreateTelephoneEntry() |> WithTextBinding "TelephoneNumber" |> AddToStack addAttendeeStack
-    let includeShares = CreateLabelledSwitch ("Download Shares") |> WithBoolBinding "IncludeShares"
-    let incSharesStack,_,_ = includeShares
-    addAttendeeStack.Add(incSharesStack)
+    CreateLabelledDropDown ("Attendee Type") attendeeTypes |> AndAddToStack addAttendeeStack
+    CreateLabelledEntry("First Name") |> WithTextEntryBinding "FirstName" |> AndAddToStack addAttendeeStack
+    CreateLabelledEntry("Last Name") |> WithTextEntryBinding "LastName" |> AndAddToStack addAttendeeStack
+    CreateLabelledDropDown("Group Name") tmpGroupNames |> AndAddToStack addAttendeeStack
+    CreateEmailEntry() |> WithTextEntryBinding "EmailAddress" |> AndAddToStack addAttendeeStack
+    CreateTelephoneEntry() |> WithTextEntryBinding "TelephoneNumber" |> AndAddToStack addAttendeeStack
+    CreateLabelledSwitch ("Download Shares") |> WithSwitchBinding "IncludeShares" |> AndAddToStack addAttendeeStack
     let buttonStack = StackLayout.CreatePadded(10)
     buttonStack.Orientation <- StackOrientation.Horizontal
     buttonStack.HorizontalOptions <- LayoutOptions.CenterAndExpand
@@ -251,7 +193,7 @@ let InformationPage() =
     We are pleased to provide you with this app to provide you with the means to register, download shares and receive information on the convention, accomodation as well as the address of the convention."
     let page = ContentPage.Create("Information")
     let stack = StackLayout.CreatePadded(20)
-    CreateLabelledLabel "Date:" "2015-04-03 (April 3rd 2015)" |> AddToStack stack
+    CreateLabelledLabel "Date:" "2015-04-03 (April 3rd 2015)" |> AndAddToStack stack
     let conventionStartDate = DateTime(2015,04,03)
     let conventionEndDate = DateTime(2015,04,05)
     let daysToConvention =
@@ -261,7 +203,7 @@ let InformationPage() =
                     "It's on now!"
                    else
                     "It's already finished"
-    CreateLabelledLabel "Days To Convention:" daysToConvention |> AddToStack stack
+    CreateLabelledLabel "Days To Convention:" daysToConvention |> AndAddToStack stack
     let blurbLabel = Label(Text=blurb)
     blurbLabel.TranslationY <- 10.0
     stack.Add(blurbLabel)
@@ -273,7 +215,7 @@ let VenuePage() =
     let stack = StackLayout.CreatePadded(20)
     let scroll = ScrollView()
     scroll.Content <- stack
-    CreateLabelledLabel "Address:" "Education Campus" |> AddToStack stack
+    CreateLabelledLabel "Address:" "Education Campus" |> AndAddToStack stack
     stack.Add(Label(Text="University of the Witwatersrand"))
     stack.Add(Label(Text="27 St Andrews Road,"))
     stack.Add(Label(Text="Parktown,"))
@@ -302,3 +244,4 @@ let StartPage() =
     tabPage.Children.Add(sharesTab)
     tabPage.Children.Add(venueTab)
     tabPage
+

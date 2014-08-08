@@ -13,7 +13,7 @@
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetProfile>netcore</TargetProfile>
     <Name>Test.Core</Name>
-    <NuGetPackageImportStamp>80abe7b3</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>b780bbf6</NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -63,47 +63,17 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Compile Include="Models.fs" />
-    <Compile Include="ViewModels.fs" />
-    <Compile Include="Views.fs" />
-    <Compile Include="Entry.fs" />
-    <EmbeddedResource Include="Images\AA.png">
-      <LogicalName>AA.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\AlAnon.png">
-      <LogicalName>AlAnon.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\AlATeen.png">
-      <LogicalName>AlATeen.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\AACA.png">
-      <LogicalName>AACA.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\Visitor.png">
-      <LogicalName>Visitor.png</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\VenueMap.png">
-      <LogicalName>VenueMap.png</LogicalName>
-    </EmbeddedResource>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="FSharp.Core" Condition=" '$(Configuration)' == 'DebugWin'">
+    <Reference Include="FSharp.Core">
       <HintPath>..\Lib\Win\FSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FSharp.Core" Condition=" '$(Configuration)' == 'DebugMono'">
-      <HintPath>..\Lib\OSX\FSharp.Core.dll</HintPath>
+    <Reference Include="NamelessInteractive.Shared.Security">
+      <HintPath>..\Lib\Shared\NamelessInteractive.Shared.Security.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

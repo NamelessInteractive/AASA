@@ -1,11 +1,11 @@
-﻿module NamelessInteractive.AASA.JoyOfLiving.Core.ViewModels
+﻿module NamelessInteractive.AASA.JoyOfLiving.Views.ViewModels
 
 open System.ComponentModel
 open System.Collections.ObjectModel
 open System.Runtime.CompilerServices
+open NamelessInteractive.AASA.JoyOfLiving.Core
 
-
-let EmptyString = System.String.Empty
+let EmptyString = Models.EmptyString
 
 type System.String with
     member this.FirstCharOrEmpty() =
@@ -26,7 +26,7 @@ open System.Reflection;
 
 
 
-type AttendeeViewModel() =
+type AttendeeViewModel(attendee: Models.Attendee) =
     inherit ViewModelBase()
     let getResourceNameAttendeeType attendeeType = 
         match attendeeType with
@@ -35,67 +35,65 @@ type AttendeeViewModel() =
         | Models.AlAnon -> Xamarin.Forms.ImageSource.FromResource "AlAnon.png"
         | Models.AlATeen -> Xamarin.Forms.ImageSource.FromResource "AlATeen.png"
         | Models.Visitor -> Xamarin.Forms.ImageSource.FromResource "Visitor.png"
-    let mutable m_FirstName = EmptyString
-    let mutable m_LastName = EmptyString
-    let mutable m_GroupName = EmptyString
-    let mutable m_EmailAddress = EmptyString
-    let mutable m_TelephoneNumber = EmptyString
-    let mutable m_AttendeeType = Models.AA
     let mutable m_IsNew = true
-    let mutable m_IsPaid = false
-    let mutable m_IncludeShares = false
+    new() = AttendeeViewModel(Models.Attendee.Create())
     member this.FirstName
-        with get() = m_FirstName
+        with get() = attendee.FirstName
         and  set value =
-                m_FirstName <- value
+                attendee.FirstName <- value
                 base.OnChanged(null)
                 base.OnChanged("DisplayName")
     member this.LastName
-        with get() = m_LastName
+        with get() = attendee.LastName
         and  set value =
-                m_LastName <- value
+                attendee.LastName <- value
                 base.OnChanged(null)
                 base.OnChanged("DisplayName")
     member this.GroupName
-        with get() = m_GroupName
+        with get() = attendee.GroupName
         and  set value =
-                m_GroupName <- value
+                attendee.GroupName <- value
                 base.OnChanged(null)
     member this.EmailAddress
-        with get() = m_EmailAddress
+        with get() = attendee.EmailAddress
         and  set value =
-                m_EmailAddress <- value
+                attendee.EmailAddress <- value
                 base.OnChanged(null)
     member this.TelephoneNumber 
-        with get() = m_TelephoneNumber
+        with get() = attendee.TelephoneNumber
         and  set value =
-                m_TelephoneNumber <- value
+                attendee.TelephoneNumber <- value
                 base.OnChanged(null)
     member this.AttendeeType 
-        with get() = m_AttendeeType
+        with get() = attendee.AttendeeType
         and set value =
-                m_AttendeeType <- value
+                attendee.AttendeeType <- value
                 base.OnChanged(null)
                 base.OnChanged("ImageSource")
     member this.DisplayName 
         with get() = this.FirstName + " " + this.LastName.FirstCharOrEmpty()
     member this.ImageSource 
         with get() = 
-            getResourceNameAttendeeType m_AttendeeType
+            getResourceNameAttendeeType attendee.AttendeeType
     member this.IsNew 
         with get() = m_IsNew
         and  set value =
                 m_IsNew <- value
                 base.OnChanged(null)
     member this.IsPaid
-        with get() = m_IsPaid
+        with get() = attendee.IsPaid
         and  set value =
-                m_IsPaid <- value
+                attendee.IsPaid <- value
                 base.OnChanged(null)
     member this.IncludeShares
-        with get() = m_IncludeShares
+        with get() = attendee.IncludeShares
         and  set value =
-                m_IncludeShares <- value
+                attendee.IncludeShares <- value
+                base.OnChanged(null)
+    member this.TShirtSize 
+        with get() = attendee.TShirtSize
+        and  set value =
+                attendee.TShirtSize <- value
                 base.OnChanged(null)
 
 type AttendeesListViewModel() =
@@ -103,4 +101,8 @@ type AttendeesListViewModel() =
     let attendeesList = ObservableCollection<AttendeeViewModel>()
     member this.AttendeesList 
         with get() = attendeesList
+    member this.Add (attendee) =
+        this.AttendeesList.Add(attendee)
+    member this.Remove (attendee) =
+        this.AttendeesList.Remove(attendee)
         

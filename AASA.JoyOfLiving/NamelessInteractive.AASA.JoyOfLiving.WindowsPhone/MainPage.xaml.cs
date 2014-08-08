@@ -20,7 +20,7 @@ namespace NamelessInteractive.AASA.JoyOfLiving.WindowsPhone
         {
             InitializeComponent();
             Forms.Init();
-            Content = NamelessInteractive.AASA.JoyOfLiving.Core.App.GetMainPage().ConvertPageToUIElement(this);
+            Content = NamelessInteractive.AASA.JoyOfLiving.Views.App.GetMainPage().ConvertPageToUIElement(this);
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }

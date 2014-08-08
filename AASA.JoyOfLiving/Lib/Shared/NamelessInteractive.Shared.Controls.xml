@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NamelessInteractive.Shared.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:NamelessInteractive.Shared.Controls.BindablePicker">
+            <summary>
+            Bindable picker.
+            </summary>
+        </member>
+        <member name="F:NamelessInteractive.Shared.Controls.BindablePicker.ItemsSourceProperty">
+            <summary>
+            The items source property.
+            </summary>
+        </member>
+        <member name="F:NamelessInteractive.Shared.Controls.BindablePicker.SelectedItemProperty">
+            <summary>
+            The selected item property.
+            </summary>
+        </member>
+        <member name="M:NamelessInteractive.Shared.Controls.BindablePicker.OnSelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Raises the selected index changed event.
+            </summary>
+            <param name="sender">Sender.</param>
+            <param name="eventArgs">Event arguments.</param>
+        </member>
+        <member name="M:NamelessInteractive.Shared.Controls.BindablePicker.OnItemsSourceChanged(Xamarin.Forms.BindableObject,System.Collections.IEnumerable,System.Collections.IEnumerable)">
+            <summary>
+            Raises the items source changed event.
+            </summary>
+            <param name="bindable">Bindable.</param>
+            <param name="oldvalue">Oldvalue.</param>
+            <param name="newvalue">Newvalue.</param>
+        </member>
+        <member name="M:NamelessInteractive.Shared.Controls.BindablePicker.OnSelectedItemChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Raises the selected item changed event.
+            </summary>
+            <param name="bindable">Bindable.</param>
+            <param name="oldvalue">Oldvalue.</param>
+            <param name="newvalue">Newvalue.</param>
+        </member>
+        <member name="M:NamelessInteractive.Shared.Controls.BindablePicker.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:NamelessInteractive.Shared.Controls.BindablePicker"/> class.
+            </summary>
+        </member>
+        <member name="P:NamelessInteractive.Shared.Controls.BindablePicker.ItemsSource">
+            <summary>
+            Gets or sets the items source.
+            </summary>
+            <value>The items source.</value>
+        </member>
+        <member name="P:NamelessInteractive.Shared.Controls.BindablePicker.SelectedItem">
+            <summary>
+            Gets or sets the selected item.
+            </summary>
+            <value>The selected item.</value>
+        </member>
+    </members>
+</doc>

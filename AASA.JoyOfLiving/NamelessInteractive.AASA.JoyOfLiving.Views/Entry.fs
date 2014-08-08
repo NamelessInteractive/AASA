@@ -1,4 +1,4 @@
-﻿namespace NamelessInteractive.AASA.JoyOfLiving.Core
+﻿namespace NamelessInteractive.AASA.JoyOfLiving.Views
 
 open Xamarin.Forms
 
