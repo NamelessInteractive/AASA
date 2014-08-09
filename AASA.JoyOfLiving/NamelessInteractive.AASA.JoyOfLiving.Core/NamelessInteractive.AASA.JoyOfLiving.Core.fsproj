@@ -66,7 +66,16 @@
   </Target>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <ItemGroup>
-    <Compile Include="Models.fs" />
+    <Compile Include="Constants.fs" />
+    <Compile Include="Patterns.fs" />
+    <Compile Include="Security.fs" />
+    <Compile Include="AttendeeType.fs" />
+    <Compile Include="ShirtSize.fs" />
+    <Compile Include="Identifier.fs" />
+    <Compile Include="Attendee.fs" />
+    <Compile Include="Meeting.fs" />
+    <Compile Include="User.fs" />
+    <Compile Include="Helpers.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">

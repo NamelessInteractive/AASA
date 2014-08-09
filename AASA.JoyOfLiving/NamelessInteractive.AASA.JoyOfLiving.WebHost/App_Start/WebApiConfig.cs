@@ -19,7 +19,8 @@ namespace NamelessInteractive.AASA.JoyOfLiving.WebHost
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            config.Formatters.Clear();
+            config.Formatters.Add (new Pathoschild.Http.Formatters.JsonNet.JsonNetFormatter ());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

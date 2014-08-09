@@ -4,8 +4,7 @@ open System.ComponentModel
 open System.Collections.ObjectModel
 open System.Runtime.CompilerServices
 open NamelessInteractive.AASA.JoyOfLiving.Core
-
-let EmptyString = Models.EmptyString
+open NamelessInteractive.AASA.JoyOfLiving.Core.Models
 
 type System.String with
     member this.FirstCharOrEmpty() =
@@ -23,8 +22,6 @@ type ViewModelBase() =
         member this.PropertyChanged = propertyChanged.Publish
 
 open System.Reflection;
-
-
 
 type AttendeeViewModel(attendee: Models.Attendee) =
     inherit ViewModelBase()

@@ -92,5 +92,9 @@
       <Project>{B6E6E25B-A6FF-4A7C-97F1-F9A424CE41F9}</Project>
       <Name>NamelessInteractive.AASA.JoyOfLiving.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NamelessInteractive.AASA.JoyOfLiving.Views\NamelessInteractive.AASA.JoyOfLiving.Views.fsproj">
+      <Project>{B35206CD-1A7F-4B2A-8578-83E2724B374F}</Project>
+      <Name>NamelessInteractive.AASA.JoyOfLiving.Views</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

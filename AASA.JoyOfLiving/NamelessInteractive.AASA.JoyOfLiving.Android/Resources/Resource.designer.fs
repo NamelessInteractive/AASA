@@ -23,10 +23,10 @@ namespace NamelessInteractive.AASA.JoyOfLiving.Android
     #nowarn "51" // address-of operator can occur in the code
     #nowarn "1183" // unused 'this' reference
     
-    exception ReturnException4a3a95333ce64b9da4bb8a5737b1a1e0 of obj
-    exception ReturnNoneException4a3a95333ce64b9da4bb8a5737b1a1e0
+    exception ReturnException3c032745a76747daa76ed2c8b5cc582b of obj
+    exception ReturnNoneException3c032745a76747daa76ed2c8b5cc582b
     [<AutoOpen>]
-    module FuncConvertFinalOverload4a3a95333ce64b9da4bb8a5737b1a1e0 =
+    module FuncConvertFinalOverload3c032745a76747daa76ed2c8b5cc582b =
       // This extension member adds to the FuncConvert type and is the last resort member in the method overloading rules. 
       type global.Microsoft.FSharp.Core.FuncConvert with
           /// A utility function to convert function values from tupled to curried form
