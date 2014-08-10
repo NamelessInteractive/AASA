@@ -20,7 +20,8 @@ namespace NamelessInteractive.AASA.JoyOfLiving.WindowsPhone
         {
             InitializeComponent();
             Forms.Init();
-            Content = NamelessInteractive.AASA.JoyOfLiving.Views.App.GetMainPage().ConvertPageToUIElement(this);
+            var action = new Action<Xamarin.Forms.Page>(page => Content = page.ConvertPageToUIElement(this));
+            Content = Views.App.GetMainPage(Microsoft.FSharp.Core.FuncConvert.ToFSharpFunc(action)).ConvertPageToUIElement(this);
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }

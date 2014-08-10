@@ -18,6 +18,7 @@ let private CreateTestAttendees() =
     aa.GroupName <- "New York"
     aa.TelephoneNumber <- "555-555-5555"
     aa.IncludeShares <- true
+    aa.IsNew <- false
     attendeesListViewModel.AttendeesList.Add(aa)
 
     let alanon = new ViewModels.AttendeeViewModel()
@@ -27,6 +28,7 @@ let private CreateTestAttendees() =
     alanon.AttendeeType <- Models.AlAnon
     alanon.GroupName <- "Akron"
     alanon.TelephoneNumber <- "555-555-5555"
+    alanon.IsNew <- false
     attendeesListViewModel.AttendeesList.Add(alanon)
 
     let alateen = new ViewModels.AttendeeViewModel()
@@ -36,6 +38,7 @@ let private CreateTestAttendees() =
     alateen.AttendeeType <- Models.AlATeen
     alateen.GroupName <- "Boston"
     alateen.TelephoneNumber <- "555-555-5555"
+    alateen.IsNew <- false
     attendeesListViewModel.AttendeesList.Add(alateen)
 
     let aaca = new ViewModels.AttendeeViewModel()
@@ -45,6 +48,7 @@ let private CreateTestAttendees() =
     aaca.AttendeeType <- Models.AACA
     aaca.GroupName <- "Boston"
     aaca.TelephoneNumber <- "555-555-5555"
+    aaca.IsNew <- false
     attendeesListViewModel.AttendeesList.Add(aaca)
 
     let visitor = new ViewModels.AttendeeViewModel()
@@ -54,6 +58,7 @@ let private CreateTestAttendees() =
     visitor.AttendeeType <- Models.Visitor
     visitor.GroupName <- "Boston"
     visitor.TelephoneNumber <- "555-555-5555"
+    visitor.IsNew <- false
     attendeesListViewModel.AttendeesList.Add(visitor)
 
 let private CreateEmailEntry () =
@@ -74,27 +79,27 @@ let private CreatePasswordEntry() =
     entryPart.IsPassword <- true
     password
 
-let LoginPage =     
-    let loginStack = StackLayout.CreatePaddedCentered(5)
-    CreateEmailEntry() |> AndAddToStack loginStack
-    CreatePasswordEntry() |> AndAddToStack loginStack
-    let buttonStack = StackLayout()
-    buttonStack.Orientation <- StackOrientation.Horizontal
-    buttonStack.HorizontalOptions <- LayoutOptions.Center
-    buttonStack.Add(Button(Text="Login"))
-    buttonStack.Add(Button(Text="Register"))
-    loginStack.Add(buttonStack)
-    ContentPage.Create ("Login", 5, loginStack)
+
+
 
 let thrd (_,_,x) = x
 
 let awaitTask (t: Task) = t |> Async.AwaitIAsyncResult |> Async.Ignore |> Async.Start
+
+
+let cachedGroupNames = ResizeArray<string>()          
+    
 
 let AddAttendeePage(attendee: ViewModels.AttendeeViewModel option) =
     let boundAttendee = 
         match attendee with
         | Some(attendee) -> attendee
         | None -> ViewModels.AttendeeViewModel()
+    let initialAttendeeState = { 
+                                    boundAttendee.Attendee with
+                                        LastName = boundAttendee.Attendee.LastName
+                               } 
+
     let page = ContentPage.Create ("Add / Edit Attendee", 10)
     page.BindingContext <- boundAttendee
     let addAttendeeScroll = ScrollView()
@@ -107,30 +112,48 @@ let AddAttendeePage(attendee: ViewModels.AttendeeViewModel option) =
                             Models.Constants.AlATeenString
                             Models.Constants.VisitorString
                         ]
-    // TODO: FIX this to use the DB.
-    let tmpGroupNames = [
-                            "Rosebank"
-                            "St Francis"
-                            "Pied Piper"
-                            "Fellowship of the Spirit"
-                        ]
-    CreateLabelledDropDown ("Attendee Type") attendeeTypes |> AndAddToStack addAttendeeStack
-    CreateLabelledEntry("First Name") |> WithTextEntryBinding "FirstName" |> AndAddToStack addAttendeeStack
-    CreateLabelledEntry("Last Name") |> WithTextEntryBinding "LastName" |> AndAddToStack addAttendeeStack
-    CreateLabelledDropDown("Group Name") tmpGroupNames |> AndAddToStack addAttendeeStack
-    CreateEmailEntry() |> WithTextEntryBinding "EmailAddress" |> AndAddToStack addAttendeeStack
-    CreateTelephoneEntry() |> WithTextEntryBinding "TelephoneNumber" |> AndAddToStack addAttendeeStack
-    CreateLabelledSwitch ("Download Shares") |> WithSwitchBinding "IncludeShares" |> AndAddToStack addAttendeeStack
-    let buttonStack = StackLayout.CreatePadded(10)
-    buttonStack.Orientation <- StackOrientation.Horizontal
-    buttonStack.HorizontalOptions <- LayoutOptions.CenterAndExpand
-    let saveButton = Button(Text="Save")
-    saveButton.Clicked.Add(fun t -> awaitTask (page.Navigation.PopAsync()))
-    let cancelButton = Button(Text="Cancel")
-    cancelButton.Clicked.Add(fun t -> awaitTask (page.Navigation.PopAsync()))
-    buttonStack.Add(saveButton)
-    buttonStack.Add(cancelButton)
-    addAttendeeStack.Add(buttonStack)
+    
+    let GetMeetingsList() =
+        async {
+                if (cachedGroupNames.Count = 0) then
+                    let req = System.Net.WebRequest.Create("http://aasa.namelessinteractive.com/api/meetings")        
+                    use! resp = req.AsyncGetResponse()
+                    use stream = resp.GetResponseStream()
+                    use reader = new System.IO.StreamReader(stream)
+                    let groupNames = 
+                           Newtonsoft.Json.JsonConvert.DeserializeObject<Models.Meeting[]>(reader.ReadToEnd())
+                           |> Array.map(fun m -> m.Name)
+                           |> Array.sortBy(fun m -> m)
+                           |> Seq.distinct
+                           |> Array.ofSeq
+                    cachedGroupNames.AddRange(groupNames)
+                CreateLabelledDropDown ("Attendee Type") attendeeTypes |> AndAddToStack addAttendeeStack
+                CreateLabelledEntry("First Name") |> WithTextEntryBinding "FirstName" |> AndAddToStack addAttendeeStack
+                CreateLabelledEntry("Last Name") |> WithTextEntryBinding "LastName" |> AndAddToStack addAttendeeStack
+                CreateLabelledDropDown("Group Name") cachedGroupNames |> AndAddToStack addAttendeeStack
+                CreateEmailEntry() |> WithTextEntryBinding "EmailAddress" |> AndAddToStack addAttendeeStack
+                CreateTelephoneEntry() |> WithTextEntryBinding "TelephoneNumber" |> AndAddToStack addAttendeeStack
+                CreateLabelledSwitch ("Download Shares") |> WithSwitchBinding "IncludeShares" |> AndAddToStack addAttendeeStack
+                let buttonStack = StackLayout.CreatePadded(10)
+                buttonStack.Orientation <- StackOrientation.Horizontal
+                buttonStack.HorizontalOptions <- LayoutOptions.CenterAndExpand
+                let saveButton = Button(Text="Save")
+                let saveAttendee() = 
+                    if (boundAttendee.IsNew) then
+                        attendeesListViewModel.Add(boundAttendee)
+                    boundAttendee.IsNew <- false
+                    awaitTask (page.Navigation.PopAsync())
+                let cancel() =
+                    boundAttendee.Attendee <- initialAttendeeState
+                    awaitTask (page.Navigation.PopAsync())
+                saveButton.Clicked.Add(fun t -> saveAttendee())
+                let cancelButton = Button(Text="Cancel")
+                cancelButton.Clicked.Add(fun t -> cancel())
+                buttonStack.Add(saveButton)
+                buttonStack.Add(cancelButton)
+                addAttendeeStack.Add(buttonStack)
+            } |> Async.StartImmediate
+    GetMeetingsList()
     page.Content <- addAttendeeScroll
     page
 
@@ -234,6 +257,7 @@ let SharesPage() =
     page
    
 let StartPage() = 
+
     let tabPage = TabbedPage()
     let informationTab = InformationPage()
     let attendeesTab = AttendeesListPage()
@@ -243,5 +267,26 @@ let StartPage() =
     tabPage.Children.Add(attendeesTab)
     tabPage.Children.Add(sharesTab)
     tabPage.Children.Add(venueTab)
-    tabPage
+    NavigationPage(tabPage)
+
+let LoginPage(setPageFunction) =     
+    let viewModel = ViewModels.LoginViewModel()
+    let page = ContentPage.Create ("Login", 5)
+    page.BindingContext <- viewModel
+    let loginStack = StackLayout.CreatePaddedCentered(5)
+    CreateEmailEntry() |> AndAddToStack loginStack
+    CreatePasswordEntry() |> AndAddToStack loginStack
+    let buttonStack = StackLayout()
+    buttonStack.Orientation <- StackOrientation.Horizontal
+    buttonStack.HorizontalOptions <- LayoutOptions.Center
+    let loginButton = Button(Text="Login")
+    loginButton.Clicked.Add(fun _ -> setPageFunction(StartPage()))
+    buttonStack.Add(loginButton)
+    let registerButton = Button(Text="Register")
+    buttonStack.Add(registerButton)
+    loginStack.Add(buttonStack)
+    page.Content <- loginStack
+    page
+
+
 

@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.x86_Nexus" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Program Files (x86)\MSBuild\12.0\bin\Microsoft.Common.CurrentVersion.targets">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="DebugWin" PreferredExecutionTarget="Android.x86_Nexus" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Views\Views.fs">
     <Files>
-      <File FileName="..\..\..\..\Program Files (x86)\MSBuild\12.0\bin\Microsoft.Common.CurrentVersion.targets" Line="47" Column="47" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Helpers.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Attendee.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\Views.fs" Line="5" Column="5" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\Helpers.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\AttendeeViewModel.fs" Line="61" Column="61" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\AttendeesListViewModel.fs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

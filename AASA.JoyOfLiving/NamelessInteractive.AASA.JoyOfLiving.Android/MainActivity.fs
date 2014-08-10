@@ -17,4 +17,4 @@ type MainActivity () =
         base.OnCreate (bundle)
 
         Xamarin.Forms.Forms.Init(this,bundle)
-        this.SetPage(NamelessInteractive.AASA.JoyOfLiving.Views.App.GetMainPage())
+        this.SetPage(NamelessInteractive.AASA.JoyOfLiving.Views.App.GetMainPage(this.SetPage))

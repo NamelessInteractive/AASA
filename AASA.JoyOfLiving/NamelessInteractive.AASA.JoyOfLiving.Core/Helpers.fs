@@ -4,8 +4,6 @@ open System
 
 open NamelessInteractive.AASA.JoyOfLiving.Core.Models
 
-
-
 let AttendeeTypeToString attendeeType =     
         match attendeeType with
         | AA -> Constants.AAString

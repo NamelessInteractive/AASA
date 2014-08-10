@@ -69,17 +69,16 @@
     <EmbeddedResource Include="Images\Visitor.png">
       <LogicalName>Visitor.png</LogicalName>
     </EmbeddedResource>
-    <Compile Include="ViewModels.fs" />
+    <Compile Include="Helpers.fs" />
+    <Compile Include="ViewModelBase.fs" />
+    <Compile Include="AttendeeViewModel.fs" />
+    <Compile Include="AttendeesListViewModel.fs" />
+    <Compile Include="LoginViewModel.fs" />
     <Compile Include="Views.fs" />
     <Compile Include="Entry.fs" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core">
-      <Name>FSharp.Core</Name>
-      <AssemblyName>FSharp.Core.dll</AssemblyName>
-      <HintPath>$(MSBuildExtensionsPath32)\..\Reference Assemblies\Microsoft\FSharp\.NETCore\$(TargetFSharpCoreVersion)\FSharp.Core.dll</HintPath>
-    </Reference>
     <Reference Include="NamelessInteractive.Shared.Controls">
       <HintPath>..\Lib\Shared\NamelessInteractive.Shared.Controls.dll</HintPath>
     </Reference>
@@ -96,6 +95,12 @@
       <Name>NamelessInteractive.AASA.JoyOfLiving.Core</Name>
       <Project>{B6E6E25B-A6FF-4A7C-97F1-F9A424CE41F9}</Project>
     </ProjectReference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\Lib\Win\FSharp.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
