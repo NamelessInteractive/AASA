@@ -11,7 +11,6 @@ type Attendee =
         mutable EmailAddress: string
         mutable TelephoneNumber: string
         mutable AttendeeType: AttendeeType
-        mutable IsPaid: bool
         mutable IncludeShares: bool
         mutable TShirtSize: ShirtSize
     }
@@ -24,8 +23,7 @@ type Attendee =
                 GroupName = EmptyString
                 EmailAddress = EmptyString
                 TelephoneNumber = EmptyString
-                AttendeeType = AA
-                IsPaid = false
+                AttendeeType = AttendeeType.AA
                 IncludeShares = true
-                TShirtSize = ShirtSizeM
+                TShirtSize = ShirtSize.ShirtSizeM
             }

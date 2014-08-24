@@ -3,8 +3,8 @@
 open System
 
 type AttendeeType = 
-    | AA
-    | AlAnon
-    | AACA
-    | AlATeen
-    | Visitor
+    | AA = 0
+    | AlAnon = 1
+    | AACA = 2
+    | AlATeen = 3
+    | Visitor = 4

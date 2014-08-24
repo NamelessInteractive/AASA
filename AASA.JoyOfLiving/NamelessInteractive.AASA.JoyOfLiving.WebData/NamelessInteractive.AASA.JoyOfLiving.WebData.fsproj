@@ -19,8 +19,7 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <Tailcalls>false</Tailcalls>
-    <PlatformTarget>
-    </PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,14 +30,15 @@
     <ErrorReport>prompt</ErrorReport>
     <Tailcalls>true</Tailcalls>
     <ConsolePause>false</ConsolePause>
-    <PlatformTarget>
-    </PlatformTarget>
+    <PlatformTarget></PlatformTarget>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Repository.fs" />
     <Compile Include="UserDataContract.fs" />
+    <Compile Include="RegistrationDataContract.fs" />
+    <Compile Include="AttendeeDataContract.fs" />
+    <Compile Include="Repository.fs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +78,9 @@
     </ProjectReference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\Program Files %28x86%29\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.6\System.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -3,10 +3,10 @@
 open System
 
 type ShirtSize =
-    | ShirtSizeXS 
-    | ShirtSizeS
-    | ShirtSizeM
-    | ShirtSizeL
-    | ShirtSizeXL
-    | ShirtSizeXXL
+    | ShirtSizeXS = 0
+    | ShirtSizeS = 1
+    | ShirtSizeM = 2
+    | ShirtSizeL = 3
+    | ShirtSizeXL = 4
+    | ShirtSizeXXL = 5
 

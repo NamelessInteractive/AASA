@@ -14,7 +14,7 @@ let private CreateTestAttendees() =
     aa.FirstName <- "Bill"
     aa.LastName <- "Wilson"
     aa.EmailAddress <- "billw@aa.org"
-    aa.AttendeeType <- Models.AA
+    aa.AttendeeType <- Models.AttendeeType.AA
     aa.GroupName <- "New York"
     aa.TelephoneNumber <- "555-555-5555"
     aa.IncludeShares <- true
@@ -25,7 +25,7 @@ let private CreateTestAttendees() =
     alanon.FirstName <- "Lois"
     alanon.LastName <- "Wilson"
     alanon.EmailAddress <- "billw@aa.org"
-    alanon.AttendeeType <- Models.AlAnon
+    alanon.AttendeeType <- Models.AttendeeType.AlAnon
     alanon.GroupName <- "Akron"
     alanon.TelephoneNumber <- "555-555-5555"
     alanon.IsNew <- false
@@ -35,7 +35,7 @@ let private CreateTestAttendees() =
     alateen.FirstName <- "John"
     alateen.LastName <- "Wilson"
     alateen.EmailAddress <- "billw@aa.org"
-    alateen.AttendeeType <- Models.AlATeen
+    alateen.AttendeeType <- Models.AttendeeType.AlATeen
     alateen.GroupName <- "Boston"
     alateen.TelephoneNumber <- "555-555-5555"
     alateen.IsNew <- false
@@ -45,7 +45,7 @@ let private CreateTestAttendees() =
     aaca.FirstName <- "Woodrow"
     aaca.LastName <- "Wilson"
     aaca.EmailAddress <- "billw@aa.org"
-    aaca.AttendeeType <- Models.AACA
+    aaca.AttendeeType <- Models.AttendeeType.AACA
     aaca.GroupName <- "Boston"
     aaca.TelephoneNumber <- "555-555-5555"
     aaca.IsNew <- false
@@ -55,7 +55,7 @@ let private CreateTestAttendees() =
     visitor.FirstName <- "Sandy"
     visitor.LastName <- "Wilson"
     visitor.EmailAddress <- "billw@aa.org"
-    visitor.AttendeeType <- Models.Visitor
+    visitor.AttendeeType <- Models.AttendeeType.Visitor
     visitor.GroupName <- "Boston"
     visitor.TelephoneNumber <- "555-555-5555"
     visitor.IsNew <- false

@@ -6,17 +6,18 @@ open NamelessInteractive.AASA.JoyOfLiving.Core.Models
 
 let AttendeeTypeToString attendeeType =     
         match attendeeType with
-        | AA -> Constants.AAString
-        | AlAnon -> Constants.AlAnonString
-        | AACA -> Constants.AACAString
-        | AlATeen -> Constants.AlATeenString
-        | Visitor -> Constants.VisitorString
+        | AttendeeType.AA -> Constants.AAString
+        | AttendeeType.AlAnon -> Constants.AlAnonString
+        | AttendeeType.AACA -> Constants.AACAString
+        | AttendeeType.AlATeen -> Constants.AlATeenString
+        | AttendeeType.Visitor -> Constants.VisitorString
+        | _ -> failwith "Unknown Attendee type."
 
 let StringToAttendeeType (attendeeTypeString:string) = 
     match attendeeTypeString with
-    | AAText -> AA
-    | AlAnonText -> AlAnon
-    | AACAText -> AACA
-    | AlATeenText -> AlATeen
-    | VisitorText -> Visitor
+    | AAText -> AttendeeType.AA
+    | AlAnonText -> AttendeeType.AlAnon
+    | AACAText -> AttendeeType.AACA
+    | AlATeenText -> AttendeeType.AlATeen
+    | VisitorText -> AttendeeType.Visitor
     | _ -> failwith "Unknown attendee type string"

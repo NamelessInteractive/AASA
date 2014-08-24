@@ -1,13 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="DebugWin" PreferredExecutionTarget="Android.x86_Nexus" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Views\Views.fs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="DebugWin" PreferredExecutionTarget="Android.ARM_Nexus" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NamelessInteractive.AASA.JoyOfLiving.Views\AttendeeViewModel.fs">
     <Files>
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Helpers.fs" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Attendee.fs" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\Views.fs" Line="5" Column="5" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\Helpers.fs" Line="1" Column="1" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\AttendeeViewModel.fs" Line="61" Column="61" />
-      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\AttendeesListViewModel.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebData\RegistrationDataContract.fs" Line="41" Column="41" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebData\UserDataContract.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Attendee.fs" Line="50" Column="50" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Meeting.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\User.fs" Line="1" Column="1" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Core\Helpers.fs" Line="49" Column="49" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebData\AttendeeDataContract.fs" Line="27" Column="27" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.WebData\AssemblyInfo.fs" Line="31" Column="31" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\AttendeeViewModel.fs" Line="46" Column="46" />
+      <File FileName="NamelessInteractive.AASA.JoyOfLiving.Views\Views.fs" Line="58" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -18,4 +22,5 @@
     <String>NamelessInteractive.AASA.JoyOfLiving.WebCore/NamelessInteractive.AASA.JoyOfLiving.WebCore.fsproj</String>
     <String>NamelessInteractive.AASA.JoyOfLiving.WebHost/NamelessInteractive.AASA.JoyOfLiving.WebHost.csproj</String>
   </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.NamelessInteractive.AASA.JoyOfLiving.Android AndroidDeviceId-Debug="304D19348A256C1F" />
 </Properties>

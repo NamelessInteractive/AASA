@@ -2,9 +2,10 @@
 
 open System
 
+
 type UserDataContract = 
     {
-        Id: string
+        Id: int
         EmailAddress: string
     }
 

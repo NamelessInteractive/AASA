@@ -9,11 +9,12 @@ type AttendeeViewModel(attendee: Models.Attendee) =
     inherit ViewModelBase()
     let getResourceNameAttendeeType attendeeType = 
         match attendeeType with
-        | Models.AA -> Xamarin.Forms.ImageSource.FromResource "AA.png"
-        | Models.AACA -> Xamarin.Forms.ImageSource.FromResource "AACA.png"
-        | Models.AlAnon -> Xamarin.Forms.ImageSource.FromResource "AlAnon.png"
-        | Models.AlATeen -> Xamarin.Forms.ImageSource.FromResource "AlATeen.png"
-        | Models.Visitor -> Xamarin.Forms.ImageSource.FromResource "Visitor.png"
+        | Models.AttendeeType.AA -> Xamarin.Forms.ImageSource.FromResource "AA.png"
+        | Models.AttendeeType.AACA -> Xamarin.Forms.ImageSource.FromResource "AACA.png"
+        | Models.AttendeeType.AlAnon -> Xamarin.Forms.ImageSource.FromResource "AlAnon.png"
+        | Models.AttendeeType.AlATeen -> Xamarin.Forms.ImageSource.FromResource "AlATeen.png"
+        | Models.AttendeeType.Visitor -> Xamarin.Forms.ImageSource.FromResource "Visitor.png"
+        | _ -> Xamarin.Forms.ImageSource.FromResource "AA.png"
     let mutable m_IsNew = true
     let mutable underlyingAttendee = attendee
     new() = AttendeeViewModel(Models.Attendee.Create())
@@ -60,11 +61,6 @@ type AttendeeViewModel(attendee: Models.Attendee) =
         and  set value =
                 m_IsNew <- value
                 base.OnChanged(null)
-    member this.IsPaid
-        with get() = underlyingAttendee.IsPaid
-        and  set value =
-                underlyingAttendee.IsPaid <- value
-                base.OnChanged(null)
     member this.IncludeShares
         with get() = underlyingAttendee.IncludeShares
         and  set value =
@@ -85,7 +81,6 @@ type AttendeeViewModel(attendee: Models.Attendee) =
                 base.OnChanged("GroupName")
                 base.OnChanged("TelephoneNumber")
                 base.OnChanged("EmailAddress")
-                base.OnChanged("IsPaid")
                 base.OnChanged("IncludeShares")
                 base.OnChanged("TShirtSize")
                 base.OnChanged("DisplayName")
