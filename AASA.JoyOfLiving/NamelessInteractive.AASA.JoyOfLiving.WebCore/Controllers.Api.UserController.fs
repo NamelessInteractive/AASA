@@ -11,4 +11,4 @@ type UserController() =
 
     [<HttpPost>]
     member this.Authenticate(email: string, hashedPassword:string) =
-        false
+        true
